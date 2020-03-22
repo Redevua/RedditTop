@@ -15,16 +15,14 @@ final class AppRoot {
          didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?,
          window: inout UIWindow?
     ) {
-        setupWindow(window: &window)
+        setup(window: &window)
     }
     
-    private func setupWindow(window: inout UIWindow?) {
+    private func setup(window: inout UIWindow?) {
         let presentation = UINavigationController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.setRootController(presentation)
         let coordinator = AppCoordinator(presentation: presentation)
         coordinator.onStart()
     }
-    
-    
 }
