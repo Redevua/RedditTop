@@ -14,5 +14,4 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .orange
     }
-    
 }
