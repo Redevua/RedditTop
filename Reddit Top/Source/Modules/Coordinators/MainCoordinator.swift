@@ -8,7 +8,11 @@
 
 import UIKit.UIViewController
 
-class MainCoordinator: BaseCoordinator {
+protocol MainCoordinatorProtocol {
+    func onOpenUrl(atPath path: String?)
+}
+
+class MainCoordinator: BaseCoordinator, MainCoordinatorProtocol {
     
     private let network: NetworkCore
     
@@ -25,5 +29,13 @@ class MainCoordinator: BaseCoordinator {
         let controller = MainViewController(contentView: view, viewModel: viewModel)
         controller.title = "Top listing"
         presentation.setViewControllers([controller], animated: true)
+    }
+    
+    func onOpenUrl(atPath path: String?) {
+        guard let path = path, let url = URL(string: path) else {
+            return
+        }
+        let controller = DetailViewController(urlPath: url)
+        presentation.present(controller, animated: true)
     }
 }

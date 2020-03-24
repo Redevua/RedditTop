@@ -23,8 +23,10 @@ extension UIImageView {
         }
     }
     
-    func setImage(atPath path: String?) {
+    func setImage(atPath path: String?, contentMode: UIView.ContentMode){
+        image = nil
         ImageBuilder(imagePath: path).configure { [weak self] (image) in
+            self?.contentMode = contentMode
             self?.imageWithFade = image
         }
     }

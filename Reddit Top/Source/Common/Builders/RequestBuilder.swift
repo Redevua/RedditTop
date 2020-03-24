@@ -60,13 +60,3 @@ struct RequestBuilder {
         self.queryItems = query?.map({ URLQueryItem(name: $0.key, value: $0.value) })
     }
 }
-
-public struct DataWrapperEntity<T: Codable>: Codable {
-    public let data: T
-   
-    enum CodingKeys: String, CodingKey {
-        case data
-    }
-}
-
-struct EmptyEntity: Codable {}

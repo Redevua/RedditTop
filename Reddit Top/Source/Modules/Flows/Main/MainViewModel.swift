@@ -19,9 +19,9 @@ class MainViewModel: NSObject, MainViewModelProtocol {
     var cellData: MainCellData = MainCellData()
     private var cellHeights: [IndexPath : CGFloat] = [:]
     private let dataFetch: MainDataFetch
-    private let coordinator: Coordinator
+    private let coordinator: Coordinator & MainCoordinatorProtocol
     
-    init(coordinator: Coordinator, dataFetch: MainDataFetch) {
+    init(coordinator: Coordinator & MainCoordinatorProtocol, dataFetch: MainDataFetch) {
         self.dataFetch = dataFetch
         self.coordinator = coordinator
     }
@@ -62,6 +62,10 @@ extension MainViewModel: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         cellHeights[indexPath, default: UITableView.automaticDimension]
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator.onOpenUrl(atPath: posts[indexPath.row].url)
     }
 }
 

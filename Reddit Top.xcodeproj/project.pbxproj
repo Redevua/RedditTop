@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E233C26242AAFC00082BC34 /* DataWrapperEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E233C25242AAFC00082BC34 /* DataWrapperEntity.swift */; };
+		1E233C28242ABD2D0082BC34 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E233C27242ABD2D0082BC34 /* DetailViewController.swift */; };
 		1E4C9E8D242808C80079E0C5 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4C9E8C242808C80079E0C5 /* Data+Extension.swift */; };
 		1E550CCA2427D77B0016B912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550CC92427D77B0016B912 /* AppDelegate.swift */; };
 		1E550CD32427D77D0016B912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E550CD22427D77D0016B912 /* Assets.xcassets */; };
@@ -50,6 +52,9 @@
 		1E885130242A82BD000B0DA0 /* ImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88512F242A82BD000B0DA0 /* ImageBuilder.swift */; };
 		1E885132242A8F05000B0DA0 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885131242A8F05000B0DA0 /* UIImageView+Extension.swift */; };
 		1E885134242A8FE3000B0DA0 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885133242A8FE3000B0DA0 /* UITableView+Extension.swift */; };
+		1E885136242A9755000B0DA0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885135242A9755000B0DA0 /* UIImage+Extension.swift */; };
+		1E885138242AA091000B0DA0 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885137242AA090000B0DA0 /* Double+Extension.swift */; };
+		1E88513A242AA0B6000B0DA0 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885139242AA0B6000B0DA0 /* Int+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E233C25242AAFC00082BC34 /* DataWrapperEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWrapperEntity.swift; sourceTree = "<group>"; };
+		1E233C27242ABD2D0082BC34 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1E4C9E8C242808C80079E0C5 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		1E550CC62427D77B0016B912 /* Reddit Top.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit Top.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E550CC92427D77B0016B912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +126,9 @@
 		1E88512F242A82BD000B0DA0 /* ImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBuilder.swift; sourceTree = "<group>"; };
 		1E885131242A8F05000B0DA0 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		1E885133242A8FE3000B0DA0 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		1E885135242A9755000B0DA0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		1E885137242AA090000B0DA0 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		1E885139242AA0B6000B0DA0 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +318,7 @@
 				1E885108242A3D1C000B0DA0 /* UIView+Extension.swift */,
 				1E885131242A8F05000B0DA0 /* UIImageView+Extension.swift */,
 				1E885133242A8FE3000B0DA0 /* UITableView+Extension.swift */,
+				1E885135242A9755000B0DA0 /* UIImage+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -342,6 +353,7 @@
 				1E885121242A65D2000B0DA0 /* BaseMetaEntity.swift */,
 				1E88512B242A8285000B0DA0 /* BaseChildrentEntity.swift */,
 				1E88512D242A828F000B0DA0 /* BaseChildrentDataEntity.swift */,
+				1E233C25242AAFC00082BC34 /* DataWrapperEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -362,6 +374,8 @@
 				1E550D282427F9760016B912 /* NSObject+Extension.swift */,
 				1E4C9E8C242808C80079E0C5 /* Data+Extension.swift */,
 				1E885129242A8256000B0DA0 /* Date+Extension.swift */,
+				1E885137242AA090000B0DA0 /* Double+Extension.swift */,
+				1E885139242AA0B6000B0DA0 /* Int+Extension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -429,6 +443,7 @@
 		1E885128242A818C000B0DA0 /* DetailsPost */ = {
 			isa = PBXGroup;
 			children = (
+				1E233C27242ABD2D0082BC34 /* DetailViewController.swift */,
 			);
 			path = DetailsPost;
 			sourceTree = "<group>";
@@ -566,6 +581,7 @@
 				1E550D2C2427F9A70016B912 /* Configurable.swift in Sources */,
 				1E550D272427F95A0016B912 /* JSONDecoder+Extension.swift in Sources */,
 				1E885110242A4EB4000B0DA0 /* MainCellData.swift in Sources */,
+				1E88513A242AA0B6000B0DA0 /* Int+Extension.swift in Sources */,
 				1E88512E242A828F000B0DA0 /* BaseChildrentDataEntity.swift in Sources */,
 				1E550D332427FAC80016B912 /* RequestBuilder.swift in Sources */,
 				1E88510E242A4E91000B0DA0 /* PostEntity.swift in Sources */,
@@ -573,6 +589,7 @@
 				1E550D062427E39C0016B912 /* BaseCoordinator.swift in Sources */,
 				1E550D372427FC4A0016B912 /* NetworkEndpointProtocol.swift in Sources */,
 				1E885107242A3CA5000B0DA0 /* MainView.swift in Sources */,
+				1E233C28242ABD2D0082BC34 /* DetailViewController.swift in Sources */,
 				1E4C9E8D242808C80079E0C5 /* Data+Extension.swift in Sources */,
 				1E550D2F2427F9F30016B912 /* NetworkParser.swift in Sources */,
 				1E885132242A8F05000B0DA0 /* UIImageView+Extension.swift in Sources */,
@@ -586,10 +603,12 @@
 				1E88512C242A8285000B0DA0 /* BaseChildrentEntity.swift in Sources */,
 				1E550D312427FA110016B912 /* NetworkParseError.swift in Sources */,
 				1E550CFA2427DEFD0016B912 /* AppRoot.swift in Sources */,
+				1E885138242AA091000B0DA0 /* Double+Extension.swift in Sources */,
 				1E885120242A64A9000B0DA0 /* PostNetworkService.swift in Sources */,
 				1E885127242A7A38000B0DA0 /* Color.swift in Sources */,
 				1E885122242A65D2000B0DA0 /* BaseMetaEntity.swift in Sources */,
 				1E550CFC2427DF5D0016B912 /* AppCoordinator.swift in Sources */,
+				1E885136242A9755000B0DA0 /* UIImage+Extension.swift in Sources */,
 				1E550CCA2427D77B0016B912 /* AppDelegate.swift in Sources */,
 				1E88512A242A8256000B0DA0 /* Date+Extension.swift in Sources */,
 				1E550D0B2427E4760016B912 /* MainCoordinator.swift in Sources */,
@@ -600,6 +619,7 @@
 				1E885118242A5644000B0DA0 /* UserBarView.swift in Sources */,
 				1E550D1E2427F09E0016B912 /* BaseWrapperEntity.swift in Sources */,
 				1E88510B242A3DFD000B0DA0 /* MainViewModel.swift in Sources */,
+				1E233C26242AAFC00082BC34 /* DataWrapperEntity.swift in Sources */,
 				1E885116242A53EF000B0DA0 /* Label.swift in Sources */,
 				1E885134242A8FE3000B0DA0 /* UITableView+Extension.swift in Sources */,
 			);
