@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AppCoordinator: BaseCoordinator {
+class AppCoordinator: BaseCoordinator {
     
     override func onStart() {
         performMainFlow()

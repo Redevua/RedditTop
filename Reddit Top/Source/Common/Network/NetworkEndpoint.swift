@@ -10,6 +10,8 @@ import Foundation
 
 enum NetworkEndpoint: NetworkEndpointProtocol {
     
+    static let baseDomain = "https://www.reddit.com"
+   
     case getTop
     
     var url: URL {
@@ -18,7 +20,7 @@ enum NetworkEndpoint: NetworkEndpointProtocol {
     var urlString: String {
         switch self {
         case .getTop:
-            return "//....."
+            return NetworkEndpoint.baseDomain + "/top.json"
         }
     }
     var method: RequestMethod {

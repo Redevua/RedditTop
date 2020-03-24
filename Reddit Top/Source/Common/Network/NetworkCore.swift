@@ -23,13 +23,11 @@ final class NetworkCore {
         completion: @escaping ((data: Data?, response: URLResponse?, error: Error?)) -> Void
     ) {
         session.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
-                completion((data: data, response: response, error: error))
-            }
+            completion((data: data, response: response, error: error))
         }.resume()
     }
     
-    private func fetch<T: Codable>(
+    func fetch<T: Codable>(
         withResuestBuilder builder: RequestBuilder,
         requestParser parser: NetworkParser<T>,
         completion: @escaping (NetworkResponse) -> Void
@@ -48,6 +46,7 @@ final class NetworkCore {
     }
     
     private func validateResponse(_ response: URLResponse?) -> Bool {
+        print("CECL")
         if let response = response as? HTTPURLResponse {
             return (200...299) ~= response.statusCode
         } else {

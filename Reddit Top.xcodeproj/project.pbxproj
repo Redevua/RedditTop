@@ -32,6 +32,15 @@
 		1E550D352427FC380016B912 /* NetworkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550D342427FC380016B912 /* NetworkEndpoint.swift */; };
 		1E550D372427FC4A0016B912 /* NetworkEndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550D362427FC4A0016B912 /* NetworkEndpointProtocol.swift */; };
 		1E550D392427FC590016B912 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550D382427FC590016B912 /* RequestMethod.swift */; };
+		1E885107242A3CA5000B0DA0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885106242A3CA5000B0DA0 /* MainView.swift */; };
+		1E885109242A3D1C000B0DA0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885108242A3D1C000B0DA0 /* UIView+Extension.swift */; };
+		1E88510B242A3DFD000B0DA0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88510A242A3DFD000B0DA0 /* MainViewModel.swift */; };
+		1E88510E242A4E91000B0DA0 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88510D242A4E91000B0DA0 /* PostEntity.swift */; };
+		1E885110242A4EB4000B0DA0 /* MainCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88510F242A4EB4000B0DA0 /* MainCellData.swift */; };
+		1E885112242A4EFE000B0DA0 /* PostTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885111242A4EFE000B0DA0 /* PostTableCell.swift */; };
+		1E885116242A53EF000B0DA0 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885115242A53EF000B0DA0 /* Label.swift */; };
+		1E885118242A5644000B0DA0 /* UserBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885117242A5644000B0DA0 /* UserBarView.swift */; };
+		1E88511B242A6258000B0DA0 /* PostContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88511A242A6258000B0DA0 /* PostContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +92,15 @@
 		1E550D342427FC380016B912 /* NetworkEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoint.swift; sourceTree = "<group>"; };
 		1E550D362427FC4A0016B912 /* NetworkEndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpointProtocol.swift; sourceTree = "<group>"; };
 		1E550D382427FC590016B912 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		1E885106242A3CA5000B0DA0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1E885108242A3D1C000B0DA0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		1E88510A242A3DFD000B0DA0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1E88510D242A4E91000B0DA0 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
+		1E88510F242A4EB4000B0DA0 /* MainCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellData.swift; sourceTree = "<group>"; };
+		1E885111242A4EFE000B0DA0 /* PostTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableCell.swift; sourceTree = "<group>"; };
+		1E885115242A53EF000B0DA0 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		1E885117242A5644000B0DA0 /* UserBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBarView.swift; sourceTree = "<group>"; };
+		1E88511A242A6258000B0DA0 /* PostContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +217,8 @@
 		1E550D012427E3380016B912 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1E885113242A53D7000B0DA0 /* Views */,
+				1E88510C242A4E7A000B0DA0 /* TableCells */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -232,6 +252,9 @@
 			isa = PBXGroup;
 			children = (
 				1E550D0D2427EB750016B912 /* MainViewController.swift */,
+				1E885106242A3CA5000B0DA0 /* MainView.swift */,
+				1E88510A242A3DFD000B0DA0 /* MainViewModel.swift */,
+				1E88510F242A4EB4000B0DA0 /* MainCellData.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -261,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				1E550D142427ECD90016B912 /* UIWindow+Extension.swift */,
+				1E885108242A3D1C000B0DA0 /* UIView+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -291,6 +315,7 @@
 			children = (
 				1E550D1B2427F0910016B912 /* BaseEntity.swift */,
 				1E550D1D2427F09E0016B912 /* BaseWrapperEntity.swift */,
+				1E88510D242A4E91000B0DA0 /* PostEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -329,6 +354,32 @@
 				1E550D302427FA110016B912 /* NetworkParseError.swift */,
 			);
 			path = NetworkParser;
+			sourceTree = "<group>";
+		};
+		1E88510C242A4E7A000B0DA0 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				1E885119242A622F000B0DA0 /* PostTableCell */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		1E885113242A53D7000B0DA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E885115242A53EF000B0DA0 /* Label.swift */,
+				1E885117242A5644000B0DA0 /* UserBarView.swift */,
+				1E88511A242A6258000B0DA0 /* PostContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1E885119242A622F000B0DA0 /* PostTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				1E885111242A4EFE000B0DA0 /* PostTableCell.swift */,
+			);
+			path = PostTableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,13 +514,19 @@
 			files = (
 				1E550D2C2427F9A70016B912 /* Configurable.swift in Sources */,
 				1E550D272427F95A0016B912 /* JSONDecoder+Extension.swift in Sources */,
+				1E885110242A4EB4000B0DA0 /* MainCellData.swift in Sources */,
 				1E550D332427FAC80016B912 /* RequestBuilder.swift in Sources */,
+				1E88510E242A4E91000B0DA0 /* PostEntity.swift in Sources */,
 				1E550D392427FC590016B912 /* RequestMethod.swift in Sources */,
 				1E550D062427E39C0016B912 /* BaseCoordinator.swift in Sources */,
 				1E550D372427FC4A0016B912 /* NetworkEndpointProtocol.swift in Sources */,
 				1E550D1C2427F0910016B912 /* BaseEntity.swift in Sources */,
+				1E885107242A3CA5000B0DA0 /* MainView.swift in Sources */,
 				1E4C9E8D242808C80079E0C5 /* Data+Extension.swift in Sources */,
 				1E550D2F2427F9F30016B912 /* NetworkParser.swift in Sources */,
+				1E88511B242A6258000B0DA0 /* PostContentView.swift in Sources */,
+				1E885109242A3D1C000B0DA0 /* UIView+Extension.swift in Sources */,
+				1E885112242A4EFE000B0DA0 /* PostTableCell.swift in Sources */,
 				1E550D152427ECD90016B912 /* UIWindow+Extension.swift in Sources */,
 				1E550D292427F9760016B912 /* NSObject+Extension.swift in Sources */,
 				1E550D312427FA110016B912 /* NetworkParseError.swift in Sources */,
@@ -481,7 +538,10 @@
 				1E550D192427F07D0016B912 /* NetworkCore.swift in Sources */,
 				1E550D352427FC380016B912 /* NetworkEndpoint.swift in Sources */,
 				1E550D0E2427EB750016B912 /* MainViewController.swift in Sources */,
+				1E885118242A5644000B0DA0 /* UserBarView.swift in Sources */,
 				1E550D1E2427F09E0016B912 /* BaseWrapperEntity.swift in Sources */,
+				1E88510B242A3DFD000B0DA0 /* MainViewModel.swift in Sources */,
+				1E885116242A53EF000B0DA0 /* Label.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
