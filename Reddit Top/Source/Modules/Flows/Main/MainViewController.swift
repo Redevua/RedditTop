@@ -39,7 +39,9 @@ class MainViewController: UIViewController {
     }
     
     private func loadData() {
+        contentView.onLoading(true)
         viewModel.fetch { [weak self] in
+            self?.contentView.onLoading(false)
             self?.contentView.tableView.reloadData()
         }
     }

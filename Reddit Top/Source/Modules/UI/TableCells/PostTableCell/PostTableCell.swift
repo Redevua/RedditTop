@@ -24,15 +24,16 @@ class PostTableCell: UITableViewCell {
     
     private func configure() {
         selectionStyle = .none
+        backgroundColor = .clear
     }
     
     private func addElements() {
         addAutolayoutSubview(dataContainerView)
         dataContainerView
-            .toSuper(.top, constant: 12)
-            .toSuper(.leading, constant: 16)
-            .toSuper(.trailing, constant: -16)
-            .toSuper(.bottom, constant: 0)
+            .toSuper(.top, constant: 8)
+            .toSuper(.leading, constant: 8)
+            .toSuper(.trailing, constant: -8)
+            .toSuper(.bottom)
     }
     
     func configure(with postEntity: PostEntity) {

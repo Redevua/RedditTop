@@ -30,7 +30,7 @@ class PostContentView: UIView {
             .toSuper(.leading, constant: 4)
             .toSuper(.trailing, constant: -4)
         userBarView
-            .anchor(.top, to: titleLabel, anchor: .bottom, constant: 16)
+            .anchor(.top, to: titleLabel, anchor: .bottom, constant: 8)
             .anchor(.leading, to: titleLabel, anchor: .leading)
             .anchor(.trailing, to: titleLabel, anchor: .trailing)
             .toSuper(.bottom, constant: -4)

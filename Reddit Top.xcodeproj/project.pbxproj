@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,7 +21,6 @@
 		1E550D0E2427EB750016B912 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550D0D2427EB750016B912 /* MainViewController.swift */; };
 		1E550D152427ECD90016B912 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550D142427ECD90016B912 /* UIWindow+Extension.swift */; };
 		1E550D192427F07D0016B912 /* NetworkCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550D182427F07D0016B912 /* NetworkCore.swift */; };
-		1E550D1C2427F0910016B912 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550D1B2427F0910016B912 /* BaseEntity.swift */; };
 		1E550D1E2427F09E0016B912 /* BaseWrapperEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550D1D2427F09E0016B912 /* BaseWrapperEntity.swift */; };
 		1E550D272427F95A0016B912 /* JSONDecoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550D262427F95A0016B912 /* JSONDecoder+Extension.swift */; };
 		1E550D292427F9760016B912 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E550D282427F9760016B912 /* NSObject+Extension.swift */; };
@@ -41,6 +40,11 @@
 		1E885116242A53EF000B0DA0 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885115242A53EF000B0DA0 /* Label.swift */; };
 		1E885118242A5644000B0DA0 /* UserBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885117242A5644000B0DA0 /* UserBarView.swift */; };
 		1E88511B242A6258000B0DA0 /* PostContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88511A242A6258000B0DA0 /* PostContentView.swift */; };
+		1E88511D242A6484000B0DA0 /* MainDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88511C242A6484000B0DA0 /* MainDataFetch.swift */; };
+		1E885120242A64A9000B0DA0 /* PostNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88511F242A64A9000B0DA0 /* PostNetworkService.swift */; };
+		1E885122242A65D2000B0DA0 /* BaseMetaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885121242A65D2000B0DA0 /* BaseMetaEntity.swift */; };
+		1E885124242A693D000B0DA0 /* RedditPostCildrenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885123242A693D000B0DA0 /* RedditPostCildrenEntity.swift */; };
+		1E885127242A7A38000B0DA0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E885126242A7A38000B0DA0 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +85,6 @@
 		1E550D0D2427EB750016B912 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1E550D142427ECD90016B912 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		1E550D182427F07D0016B912 /* NetworkCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCore.swift; sourceTree = "<group>"; };
-		1E550D1B2427F0910016B912 /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
 		1E550D1D2427F09E0016B912 /* BaseWrapperEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWrapperEntity.swift; sourceTree = "<group>"; };
 		1E550D262427F95A0016B912 /* JSONDecoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extension.swift"; sourceTree = "<group>"; };
 		1E550D282427F9760016B912 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
@@ -101,6 +104,11 @@
 		1E885115242A53EF000B0DA0 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		1E885117242A5644000B0DA0 /* UserBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBarView.swift; sourceTree = "<group>"; };
 		1E88511A242A6258000B0DA0 /* PostContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentView.swift; sourceTree = "<group>"; };
+		1E88511C242A6484000B0DA0 /* MainDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataFetch.swift; sourceTree = "<group>"; };
+		1E88511F242A64A9000B0DA0 /* PostNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNetworkService.swift; sourceTree = "<group>"; };
+		1E885121242A65D2000B0DA0 /* BaseMetaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMetaEntity.swift; sourceTree = "<group>"; };
+		1E885123242A693D000B0DA0 /* RedditPostCildrenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditPostCildrenEntity.swift; sourceTree = "<group>"; };
+		1E885126242A7A38000B0DA0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +263,7 @@
 				1E885106242A3CA5000B0DA0 /* MainView.swift */,
 				1E88510A242A3DFD000B0DA0 /* MainViewModel.swift */,
 				1E88510F242A4EB4000B0DA0 /* MainCellData.swift */,
+				1E88511C242A6484000B0DA0 /* MainDataFetch.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -262,6 +271,7 @@
 		1E550D0F2427ECA30016B912 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1E885125242A7A2C000B0DA0 /* Constants */,
 				1E550D2A2427F99C0016B912 /* Helpers */,
 				1E550D222427F6280016B912 /* Builders */,
 				1E550D1A2427F0830016B912 /* Entities */,
@@ -302,6 +312,7 @@
 		1E550D172427F06D0016B912 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1E88511E242A6499000B0DA0 /* Services */,
 				1E550D182427F07D0016B912 /* NetworkCore.swift */,
 				1E550D342427FC380016B912 /* NetworkEndpoint.swift */,
 				1E550D362427FC4A0016B912 /* NetworkEndpointProtocol.swift */,
@@ -313,9 +324,10 @@
 		1E550D1A2427F0830016B912 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				1E550D1B2427F0910016B912 /* BaseEntity.swift */,
 				1E550D1D2427F09E0016B912 /* BaseWrapperEntity.swift */,
 				1E88510D242A4E91000B0DA0 /* PostEntity.swift */,
+				1E885121242A65D2000B0DA0 /* BaseMetaEntity.swift */,
+				1E885123242A693D000B0DA0 /* RedditPostCildrenEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -380,6 +392,22 @@
 				1E885111242A4EFE000B0DA0 /* PostTableCell.swift */,
 			);
 			path = PostTableCell;
+			sourceTree = "<group>";
+		};
+		1E88511E242A6499000B0DA0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1E88511F242A64A9000B0DA0 /* PostNetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1E885125242A7A2C000B0DA0 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1E885126242A7A38000B0DA0 /* Color.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,7 +490,7 @@
 				};
 			};
 			buildConfigurationList = 1E550CC12427D77B0016B912 /* Build configuration list for PBXProject "Reddit Top" */;
-			compatibilityVersion = "Xcode 11.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -513,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E550D2C2427F9A70016B912 /* Configurable.swift in Sources */,
+				1E885124242A693D000B0DA0 /* RedditPostCildrenEntity.swift in Sources */,
 				1E550D272427F95A0016B912 /* JSONDecoder+Extension.swift in Sources */,
 				1E885110242A4EB4000B0DA0 /* MainCellData.swift in Sources */,
 				1E550D332427FAC80016B912 /* RequestBuilder.swift in Sources */,
@@ -520,7 +549,6 @@
 				1E550D392427FC590016B912 /* RequestMethod.swift in Sources */,
 				1E550D062427E39C0016B912 /* BaseCoordinator.swift in Sources */,
 				1E550D372427FC4A0016B912 /* NetworkEndpointProtocol.swift in Sources */,
-				1E550D1C2427F0910016B912 /* BaseEntity.swift in Sources */,
 				1E885107242A3CA5000B0DA0 /* MainView.swift in Sources */,
 				1E4C9E8D242808C80079E0C5 /* Data+Extension.swift in Sources */,
 				1E550D2F2427F9F30016B912 /* NetworkParser.swift in Sources */,
@@ -529,8 +557,12 @@
 				1E885112242A4EFE000B0DA0 /* PostTableCell.swift in Sources */,
 				1E550D152427ECD90016B912 /* UIWindow+Extension.swift in Sources */,
 				1E550D292427F9760016B912 /* NSObject+Extension.swift in Sources */,
+				1E88511D242A6484000B0DA0 /* MainDataFetch.swift in Sources */,
 				1E550D312427FA110016B912 /* NetworkParseError.swift in Sources */,
 				1E550CFA2427DEFD0016B912 /* AppRoot.swift in Sources */,
+				1E885120242A64A9000B0DA0 /* PostNetworkService.swift in Sources */,
+				1E885127242A7A38000B0DA0 /* Color.swift in Sources */,
+				1E885122242A65D2000B0DA0 /* BaseMetaEntity.swift in Sources */,
 				1E550CFC2427DF5D0016B912 /* AppCoordinator.swift in Sources */,
 				1E550CCA2427D77B0016B912 /* AppDelegate.swift in Sources */,
 				1E550D0B2427E4760016B912 /* MainCoordinator.swift in Sources */,
@@ -640,7 +672,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -696,7 +728,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -710,15 +742,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8JEXR44V49;
+				DEVELOPMENT_TEAM = 7YRZDEQNDT;
 				INFOPLIST_FILE = "Reddit Top/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "top.reddit.redevua.Reddit-Top";
+				PRODUCT_BUNDLE_IDENTIFIER = test.module;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -728,15 +762,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8JEXR44V49;
+				DEVELOPMENT_TEAM = 7YRZDEQNDT;
 				INFOPLIST_FILE = "Reddit Top/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "top.reddit.redevua.Reddit-Top";
+				PRODUCT_BUNDLE_IDENTIFIER = test.module;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

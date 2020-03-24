@@ -10,11 +10,15 @@ import UIKit
 
 final class AppRoot {
     
+    private let network: NetworkCore
+    
     init(
         _ application: UIApplication,
          didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?,
-         window: inout UIWindow?
+         window: inout UIWindow?,
+         network: NetworkCore
     ) {
+        self.network = network
         setup(window: &window)
     }
     
@@ -22,7 +26,7 @@ final class AppRoot {
         let presentation = UINavigationController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.setRootController(presentation)
-        let coordinator = AppCoordinator(presentation: presentation)
+        let coordinator = AppCoordinator(presentation: presentation, network: network)
         coordinator.onStart()
     }
 }

@@ -36,5 +36,16 @@ class BaseCoordinator: Coordinator {
     func onBack(animated: Bool) {
         presentation.popViewController(animated: animated)
     }
+    
+    func onError(error: Error?) {
+        let alert = UIAlertController(
+            title: "Error",
+            message: error?.localizedDescription ?? "Unkown error",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.view.tintColor = .darkText
+        presentation.present(alert, animated: true)
+    }
 }
 

@@ -17,4 +17,5 @@ protocol Coordinator: AnyObject {
     func removeChild(coordinator: Coordinator)
     func onStart()
     func onBack(animated: Bool)
+    func onError(error: Error?)
 }

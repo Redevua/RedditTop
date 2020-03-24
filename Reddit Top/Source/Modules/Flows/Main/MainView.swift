@@ -11,12 +11,14 @@ import UIKit
 protocol MainViewProtocol {
     var tableView: UITableView { get }
     
+    func onLoading(_ isLoading: Bool)
     func configure(withCellData cellData: MainCellData)
 }
 
 class MainView: UIView, MainViewProtocol {
     
     let tableView: UITableView = UITableView()
+    let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     init() {
         super.init(frame: .zero)
@@ -31,16 +33,28 @@ class MainView: UIView, MainViewProtocol {
     private func configure() {
         backgroundColor = .white
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .white
-        tableView.contentInset = .init(top: 0, left: 0, bottom: 24, right: 0)
+        tableView.backgroundColor = Color.bgColor
+        tableView.contentInset = .init(top: 0, left: 0, bottom: 12, right: 0)
+        tableView.showsVerticalScrollIndicator = false
     }
 
     private func addElements() {
-        addAutolayoutSubview(tableView)
+        addAutolayoutSubviews(tableView, activityIndicator)
         tableView.toSuperEdges()
+        activityIndicator
+            .toSuper(.centerY)
+            .toSuper(.centerX)
     }
     
     func configure(withCellData cellData: MainCellData) {
         tableView.register(cellData.cell, forCellReuseIdentifier: cellData.identifier)
+    }
+    
+    func onLoading(_ isLoading: Bool) {
+        if isLoading {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
     }
 }

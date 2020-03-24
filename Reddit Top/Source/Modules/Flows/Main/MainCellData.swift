@@ -11,5 +11,4 @@ import UIKit
 struct MainCellData {
     let cell: AnyClass = PostTableCell.self
     let identifier: String = String(describing: PostTableCell.self)
-    let cellHeight: CGFloat = 68.0
 }

@@ -10,12 +10,20 @@ import UIKit.UIViewController
 
 class MainCoordinator: BaseCoordinator {
     
+    private let network: NetworkCore
+    
+    init(presentation: UINavigationController, network: NetworkCore) {
+        self.network = network
+        super.init(presentation: presentation)
+    }
+    
     override func onStart() {
         let view = MainView()
-        let viewModel = MainViewModel(dataFetch: Any.self)
+        let postService = PostNetworkService(newtork: network)
+        let dataFetch = MainDataFetch(postsService: postService)
+        let viewModel = MainViewModel(coordinator: self, dataFetch: dataFetch)
         let controller = MainViewController(contentView: view, viewModel: viewModel)
         controller.title = "Top listing"
-        presentation.navigationBar.prefersLargeTitles = true
         presentation.setViewControllers([controller], animated: true)
     }
 }

@@ -16,92 +16,23 @@ protocol MainViewModelProtocol {
 class MainViewModel: NSObject, MainViewModelProtocol {
     
     var posts: [PostEntity] = []
-    let cellData: MainCellData = MainCellData()
+    var cellData: MainCellData = MainCellData()
+    private var cellHeights: [IndexPath : CGFloat] = [:]
+    private let dataFetch: MainDataFetch
+    private let coordinator: Coordinator
     
-    init(dataFetch: Any) {
-        
+    init(coordinator: Coordinator, dataFetch: MainDataFetch) {
+        self.dataFetch = dataFetch
+        self.coordinator = coordinator
     }
     
     func fetch(completion: @escaping () -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.posts.append(
-                contentsOf: [
-                    PostEntity(
-                        title: "asihushfuahfuiha^&*6786gfg hytf ygg gh hfghdg f",
-                        thumbnail: nil,
-                        authorName: "Andrea KJjs",
-                        timestamp: 7878768
-                    ),
-                    PostEntity(
-                        title: "GHghdsgahdga shdahs^&*6786gfg j jdfjsh jfhs jhjfhdfjhdjhj fjhdjfhjhh dg f",
-                        thumbnail: nil,
-                        authorName: "Maata Bmma",
-                        timestamp: 324232
-                    ),
-                    PostEntity(
-                        title: "asihushfuahfuiha^&*6786gfg hytf ygg gh hfghdg f",
-                        thumbnail: nil,
-                        authorName: "Ajjds Ytee",
-                        timestamp: 3423
-                    ),
-                    PostEntity(
-                        title: "NAyhdsd sdjhaj jaljshda jjhjahs ^&*6786gfg hytf ygg gh hfghdg f",
-                        thumbnail: nil,
-                        authorName: "Managa KJjs",
-                        timestamp: 423423
-                    ),
-                    PostEntity(
-                        title: "asihushfuahfuiha^&*6786gfg hytf ygg gh hfghdg f",
-                        thumbnail: nil,
-                        authorName: "Andrea KJjs",
-                        timestamp: 7878768
-                    ),
-                    PostEntity(
-                        title: "GHghdsgahdga shdahs^&*6786gfg j jdfjsh jfhs jhjfhdfjhdjhj fjhdjfhjhh dg f",
-                        thumbnail: nil,
-                        authorName: "Maata Bmma",
-                        timestamp: 324232
-                    ),
-                    PostEntity(
-                        title: "asihushfuahfuiha^&*6786gfg hytf ygg gh hfghdg f",
-                        thumbnail: nil,
-                        authorName: "Ajjds Ytee",
-                        timestamp: 3423
-                    ),
-                    PostEntity(
-                        title: "NAyhdsd sdjhaj jaljshda jjhjahs ^&*6786gfg hytf ygg gh hfghdg f",
-                        thumbnail: nil,
-                        authorName: "Managa KJjs",
-                        timestamp: 423423
-                    ),
-                    PostEntity(
-                        title: "asihushfuahfuiha^&*6786gfg hytf ygg gh hfghdg f",
-                        thumbnail: nil,
-                        authorName: "Andrea KJjs",
-                        timestamp: 7878768
-                    ),
-                    PostEntity(
-                        title: "GHghdsgahdga shdahs^&*6786gfg j jdfjsh jfhs jhjfhdfjhdjhj fjhdjfhjhh dg f",
-                        thumbnail: nil,
-                        authorName: "Maata Bmma",
-                        timestamp: 324232
-                    ),
-                    PostEntity(
-                        title: "asihushfuahfuiha^&*6786gfg hytf ygg gh hfghdg f",
-                        thumbnail: nil,
-                        authorName: "Ajjds Ytee",
-                        timestamp: 3423
-                    ),
-                    PostEntity(
-                        title: "NAyhdsd sdjhaj jaljshda jjhjahs ^&*6786gfg hytf ygg gh hfghdg f",
-                        thumbnail: nil,
-                        authorName: "Managa KJjs",
-                        timestamp: 423423
-                    )
-                ]
-            )
+        dataFetch.getPost(onNext: { [weak self] (posts) in
+            self?.posts = posts
             completion()
-        }
+        }, onError: { [weak self] error in
+            self?.coordinator.onError(error: error)
+        })
     }
 }
 
@@ -119,12 +50,17 @@ extension MainViewModel: UITableViewDataSource {
         cell.configure(with: posts[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cellHeights[indexPath] = cell.frame.height
+    }
 }
 
 //MARK: -UITableViewDelegate
 extension MainViewModel: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        cellData.cellHeight
-//    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        cellHeights[indexPath, default: UITableView.automaticDimension]
+    }
 }
 

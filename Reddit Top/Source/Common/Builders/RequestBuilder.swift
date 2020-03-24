@@ -61,7 +61,7 @@ struct RequestBuilder {
     }
 }
 
-struct DataWrapperEntity<T: Codable>: Codable {
+public struct DataWrapperEntity<T: Codable>: Codable {
     public let data: T
    
     enum CodingKeys: String, CodingKey {

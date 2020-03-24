@@ -12,13 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private var root: AppRoot!
+    private var network: NetworkCore!
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        network = NetworkCore()
         root = AppRoot(
             application,
             didFinishLaunchingWithOptions: launchOptions,
-            window: &window
+            window: &window,
+            network: network
         )
         return true
     }

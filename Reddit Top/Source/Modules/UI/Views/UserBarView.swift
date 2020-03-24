@@ -47,6 +47,6 @@ class UserBarView: UIView {
     func configure(with postEntity: PostEntity) {
         timeAgoLabel.configure(text: String(postEntity.timestamp))
         authorNameLabel.configure(text: postEntity.authorName)
-        imageViewView.image = postEntity.thumbnail
+       // imageViewView.image = postEntity.thumbnail
     }
 }

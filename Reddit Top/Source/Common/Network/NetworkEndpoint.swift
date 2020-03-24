@@ -12,20 +12,20 @@ enum NetworkEndpoint: NetworkEndpointProtocol {
     
     static let baseDomain = "https://www.reddit.com"
    
-    case getTop
+    case getTopPosts
     
     var url: URL {
         return URL(string: urlString)!
     }
     var urlString: String {
         switch self {
-        case .getTop:
+        case .getTopPosts:
             return NetworkEndpoint.baseDomain + "/top.json"
         }
     }
     var method: RequestMethod {
         switch self {
-        case .getTop:
+        case .getTopPosts:
             return .GET
         }
     }

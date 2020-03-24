@@ -12,11 +12,6 @@ final class NetworkCore {
     
     private let session: URLSession = URLSession.shared
     
-    enum NetworkResponse {
-        case success(model: Codable)
-        case failure(error: Error?)
-    }
-    
     private func fetchData<T: Codable>(
         responseModel model: T.Type,
         request: URLRequest,
@@ -30,18 +25,19 @@ final class NetworkCore {
     func fetch<T: Codable>(
         withResuestBuilder builder: RequestBuilder,
         requestParser parser: NetworkParser<T>,
-        completion: @escaping (NetworkResponse) -> Void
+        onNext: @escaping (T) -> Void,
+        onError: @escaping (Error?) -> Void
     ) {
         fetchData(responseModel: T.self, request: builder.request) { [weak self] (data, response, error) in
             guard let self = self, self.validateResponse(response) else {
-                completion(.failure(error: error))
+                onError(error)
                 return
             }
             guard let model = try? parser.parse(data: data) else {
-                completion(.failure(error: error))
+                onError(error)
                 return
             }
-            completion(.success(model: model))
+            onNext(model)
         }
     }
     
