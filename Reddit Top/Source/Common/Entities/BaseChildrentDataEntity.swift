@@ -1,5 +1,5 @@
 //
-//  RedditPostCildrenEntity.swift
+//  BaseChildrentDataEntity.swift
 //  Reddit Top
 //
 //  Created by Danylo Bulanov on 3/24/20.
@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct BaseChildrentDataEntity<T: Codable>: Codable {
+    public let data: T
+}

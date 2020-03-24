@@ -11,8 +11,14 @@ import UIKit
 class UserBarView: UIView {
     
     private let imageViewView: UIImageView = UIImageView()
-    private let authorNameLabel: Label = Label(textColor: .darkGray, font: .systemFont(ofSize: 18, weight: .medium))
-    private let timeAgoLabel: Label = Label(textColor: .lightGray, font: .systemFont(ofSize: 12, weight: .regular))
+    private let authorNameLabel: Label = Label(
+        textColor: .darkGray,
+        font: .systemFont(ofSize: 16, weight: .medium)
+    )
+    private let timeAgoLabel: Label = Label(
+        textColor: .lightGray,
+        font: .systemFont(ofSize: 12, weight: .regular)
+    )
     
     init() {
         super.init(frame: .zero)
@@ -25,8 +31,11 @@ class UserBarView: UIView {
     }
     
     private func configure() {
+        imageViewView.clipsToBounds = true
         imageViewView.layer.cornerRadius = 20
-        imageViewView.backgroundColor = .orange
+        imageViewView.backgroundColor = .white
+        authorNameLabel.lineBreakMode = .byTruncatingTail
+        timeAgoLabel.lineBreakMode = .byTruncatingTail
     }
     
     private func addElements() {
@@ -40,13 +49,14 @@ class UserBarView: UIView {
             .toSuper(.trailing, constant: -12)
         timeAgoLabel
             .anchor(.top, to: authorNameLabel, anchor: .bottom, constant: 2)
-            .anchor(.leading, to: authorNameLabel, anchor: .leading, constant: 2)
+            .anchor(.leading, to: authorNameLabel, anchor: .leading)
             .anchor(.trailing, to: authorNameLabel, anchor: .trailing)
     }
     
     func configure(with postEntity: PostEntity) {
+        imageViewView.image = UIImage(named: "ic_user_avatar_default")
         timeAgoLabel.configure(text: String(postEntity.timestamp))
         authorNameLabel.configure(text: postEntity.authorName)
-       // imageViewView.image = postEntity.thumbnail
+        imageViewView.setImage(atPath: postEntity.thumbnail)
     }
 }

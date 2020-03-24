@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct BaseMetaEntity: Codable {
+struct BaseMetaEntity: Codable {
     
-    public let currentPage: Int
-    public let totalPage: Int
+    let currentPage: Int
+    let totalPage: Int
     
     enum CodingKeys: String, CodingKey {
         case currentPage = "current_page"

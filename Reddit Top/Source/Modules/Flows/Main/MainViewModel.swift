@@ -32,6 +32,7 @@ class MainViewModel: NSObject, MainViewModelProtocol {
             completion()
         }, onError: { [weak self] error in
             self?.coordinator.onError(error: error)
+            completion()
         })
     }
 }

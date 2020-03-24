@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         configure()
         bind()
+        loadData()
     }
     
     required init?(coder: NSCoder) {
@@ -32,17 +33,11 @@ class MainViewController: UIViewController {
         view = contentView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadData()
-        
-    }
-    
     private func loadData() {
         contentView.onLoading(true)
         viewModel.fetch { [weak self] in
             self?.contentView.onLoading(false)
-            self?.contentView.tableView.reloadData()
+            self?.contentView.tableView.reload()
         }
     }
     

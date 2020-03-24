@@ -10,7 +10,7 @@ import UIKit
 
 class PostContentView: UIView {
     
-    private let titleLabel: Label = Label(font: UIFont.systemFont(ofSize: 26, weight: .semibold))
+    private let titleLabel: Label = Label(font: UIFont.systemFont(ofSize: 22, weight: .semibold))
     private let userBarView: UserBarView = UserBarView()
     
     init() {
