@@ -37,7 +37,7 @@ extension PostEntity: Codable {
         url = try? container.decode(String.self, forKey: .url)
         authorName = try container.decode(String.self, forKey: .authorName)
         timestamp = try container.decode(Date.self, forKey: .timestamp)
-        numComments = try container.decode(Int.self, forKey: .timestamp)
+        numComments = try container.decode(Int.self, forKey: .numComments)
         image = nil
     }
 }
