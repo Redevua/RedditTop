@@ -12,17 +12,18 @@ struct ImageBuilder {
     
     let imagePath: String?
     
-    func configure(onNext: @escaping (UIImage?) -> Void) {
+    func build(result: @escaping (UIImage?) -> Void) {
         let imagePath = self.imagePath
         DispatchQueue.global(qos: .userInteractive).async { 
             guard let path = imagePath,
                 let url = URL(string: path),
                 let data = try? Data(contentsOf: url),
                 let image = UIImage(data: data) else {
+                    result(nil)
                     return
             }
             DispatchQueue.main.async {
-                onNext(image)
+                result(image)
             }
         }
     }

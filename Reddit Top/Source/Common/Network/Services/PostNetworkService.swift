@@ -16,14 +16,21 @@ class PostNetworkService {
         self.network = newtork
     }
     
-    func getPosts(onNext: @escaping ([PostEntity]) -> Void, onError: @escaping (Error?) -> Void) {
+    func getPosts(withAfter after: String? = nil, onNext: @escaping ((post: [PostEntity], after: String?)) -> Void, onError: @escaping (Error?) -> Void) {
         let network = self.network
+        let builder: RequestBuilder
+        if let after = after {
+            builder = RequestBuilder(endpoint: .getTopPosts, query: ["after" : after])
+        } else {
+            builder = RequestBuilder(endpoint: .getTopPosts)
+        }
         network.fetch(
-            withResuestBuilder: RequestBuilder(endpoint: .getTopPosts),
+            withResuestBuilder: builder,
             requestParser: NetworkParser<DataWrapperEntity<BaseChildrentEntity<[BaseChildrentDataEntity<PostEntity>]>>>(),
         onNext: { (value) in
             let posts = value.data.children.map({ $0.data })
-            onNext(posts)
+            let after = value.data.after
+            onNext((posts, after))
         }, onError: { error in
             onError(error)
         })

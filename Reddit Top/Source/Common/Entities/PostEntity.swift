@@ -8,15 +8,18 @@
 
 import UIKit
 
-struct PostEntity: Codable {
+struct PostEntity: Equatable {
+    
     let title: String
     let thumbnail: String?
-    let thumbnailHeight, thumbnailWidth: CGFloat?
-    
+    let image: UIImage?
     let url: String?
     let authorName: String
     let timestamp: Date
     let numComments: Int
+}
+
+extension PostEntity: Codable {
     
     enum CodingKeys: String, CodingKey {
         case title
@@ -25,7 +28,31 @@ struct PostEntity: Codable {
         case timestamp = "created_utc"
         case url
         case numComments = "num_comments"
-        case thumbnailHeight = "thumbnail_height"
-        case thumbnailWidth = "thumbnail_width"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        title = try container.decode(String.self, forKey: .title)
+        thumbnail = try? container.decode(String.self, forKey: .thumbnail)
+        url = try? container.decode(String.self, forKey: .url)
+        authorName = try container.decode(String.self, forKey: .authorName)
+        timestamp = try container.decode(Date.self, forKey: .timestamp)
+        numComments = try container.decode(Int.self, forKey: .timestamp)
+        image = nil
+    }
+}
+
+extension PostEntity {
+    
+    func with(image: UIImage) -> PostEntity {
+        return .init(
+            title: title,
+            thumbnail: thumbnail,
+            image: image,
+            url: url,
+            authorName: authorName,
+            timestamp: timestamp,
+            numComments: numComments
+        )
     }
 }

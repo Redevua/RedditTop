@@ -9,5 +9,6 @@
 import Foundation
 
 struct BaseChildrentEntity<T: Codable>: Codable {
-    public let children: T
+    let children: T
+    let after: String?
 }

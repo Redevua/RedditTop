@@ -19,4 +19,10 @@ extension UITableView {
                 self.reloadData()
         })
     }
+    
+    func reloadWithoutAnimate() {
+        UIView.performWithoutAnimation {
+            self.reloadSections(.init(arrayLiteral: 0), with: .none)
+        }
+    }
 }

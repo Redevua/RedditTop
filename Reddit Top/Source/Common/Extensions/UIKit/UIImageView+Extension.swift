@@ -24,8 +24,9 @@ extension UIImageView {
     }
     
     func setImage(atPath path: String?, contentMode: UIView.ContentMode) {
-         self.contentMode = contentMode
-        ImageBuilder(imagePath: path).configure { [weak self] (image) in
+        self.image = nil
+        self.contentMode = contentMode
+        ImageBuilder(imagePath: path).build { [weak self] (image) in
             self?.imageWithFade = image
         }
     }

@@ -31,4 +31,5 @@ struct NetworkLogger {
     static func log(data: Data) {
         print("RESPONSE \(data.json ?? "empty data")")
     }
+    
 }

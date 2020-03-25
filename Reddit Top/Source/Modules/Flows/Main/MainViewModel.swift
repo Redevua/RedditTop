@@ -7,28 +7,64 @@
 //
 
 import UIKit
+import Combine
 
-protocol MainViewModelProtocol {
+protocol MainViewModelProtocol: class {
+   
     var cellData: MainCellData { get }
-    func fetch(completion: @escaping () -> Void)
+    var posts: [PostEntity] { get }
+    var delegate: MainViewModelDelegate? { get set }
+    
+    func onLoadData(completion: @escaping () -> Void)
+    func onAfterLoading(completion: @escaping () -> Void)
+    func onRefresh(completion: @escaping (_ isReload: Bool) -> Void)
+}
+
+protocol MainViewModelDelegate: class {
+    func main(viewModel: MainViewModel, didVisibleLastRow action: Void)
 }
 
 class MainViewModel: NSObject, MainViewModelProtocol {
-    
+
     var posts: [PostEntity] = []
     var cellData: MainCellData = MainCellData()
+    weak var delegate: MainViewModelDelegate?
     private var cellHeights: [IndexPath : CGFloat] = [:]
     private let dataFetch: MainDataFetch
     private let coordinator: Coordinator & MainCoordinatorProtocol
-    
+  
     init(coordinator: Coordinator & MainCoordinatorProtocol, dataFetch: MainDataFetch) {
         self.dataFetch = dataFetch
         self.coordinator = coordinator
     }
     
-    func fetch(completion: @escaping () -> Void) {
+    func onLoadData(completion: @escaping () -> Void) {
         dataFetch.getPost(onNext: { [weak self] (posts) in
             self?.posts = posts
+            completion()
+        }, onError: { [weak self] error in
+            self?.coordinator.onError(error: error)
+            completion()
+        })
+    }
+    
+    func onRefresh(completion: @escaping (_ isReload: Bool) -> Void) {
+        dataFetch.getPost(onNext: { [weak self] (posts) in
+            if self?.posts == posts {
+                completion(false)
+            } else {
+                self?.posts = posts
+                completion(true)
+            }
+        }, onError: { [weak self] error in
+            self?.coordinator.onError(error: error)
+            completion(false)
+        })
+    }
+    
+    func onAfterLoading(completion: @escaping () -> Void) {
+        dataFetch.getPostWithAfter(onNext: { [weak self] (posts) in
+            self?.posts.append(contentsOf: posts)
             completion()
         }, onError: { [weak self] error in
             self?.coordinator.onError(error: error)
@@ -53,15 +89,27 @@ extension MainViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if isLastVisibleCell(at: indexPath) {
+            delegate?.main(viewModel: self, didVisibleLastRow: ())
+        }
         cellHeights[indexPath] = cell.frame.height
+    }
+    
+    func isLastVisibleCell(at indexPath: IndexPath) -> Bool {
+        let lastIndex = posts.count - 1
+        return lastIndex == indexPath.row
     }
 }
 
 //MARK: -UITableViewDelegate
 extension MainViewModel: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        cellHeights[indexPath, default: UITableView.automaticDimension]
+        cellHeights[indexPath] ?? UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        cellHeights[indexPath] ?? UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

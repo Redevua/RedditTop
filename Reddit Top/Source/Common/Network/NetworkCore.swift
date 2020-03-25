@@ -17,6 +17,7 @@ final class NetworkCore {
         request: URLRequest,
         completion: @escaping ((data: Data?, response: URLResponse?, error: Error?)) -> Void
     ) {
+        print("REQUEST \(request.url?.absoluteString ?? "")")
         session.dataTask(with: request) { (data, response, error) in
             completion((data: data, response: response, error: error))
         }.resume()
@@ -42,7 +43,6 @@ final class NetworkCore {
     }
     
     private func validateResponse(_ response: URLResponse?) -> Bool {
-        print("CECL")
         if let response = response as? HTTPURLResponse {
             return (200...299) ~= response.statusCode
         } else {

@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainViewProtocol {
     var tableView: UITableView { get }
+    var refreshControl: UIRefreshControl { get }
     
     func onLoading(_ isLoading: Bool)
     func configure(withCellData cellData: MainCellData)
@@ -17,9 +18,10 @@ protocol MainViewProtocol {
 
 class MainView: UIView, MainViewProtocol {
     
+    let refreshControl = UIRefreshControl()
     let tableView: UITableView = UITableView()
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-    
+  
     init() {
         super.init(frame: .zero)
         addElements()
@@ -29,7 +31,7 @@ class MainView: UIView, MainViewProtocol {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func configure() {
         backgroundColor = .white
         tableView.separatorStyle = .none
@@ -39,6 +41,7 @@ class MainView: UIView, MainViewProtocol {
     }
 
     private func addElements() {
+        tableView.addSubview(refreshControl)
         addAutolayoutSubviews(tableView, activityIndicator)
         tableView.toSuperEdges()
         activityIndicator
