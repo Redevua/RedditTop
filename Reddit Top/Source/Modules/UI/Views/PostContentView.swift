@@ -31,12 +31,11 @@ class PostContentView: UIView {
         titleLabel
             .toSuper(.top, constant: 8)
             .toSuper(.leading, constant: 8)
-            .toSuper(.trailing, constant: -4)
+            .toSuper(.trailing, constant: -8)
         stackView.axis = .vertical
         stackView
             .anchor(.top, to: titleLabel, anchor: .bottom, constant: 6)
             .toSuper(anchors: .leading, .trailing)
-            .size(height: 120, priority: 999)
         thumbnailImageView
             .toSuperEdges()
         userBarView
@@ -51,21 +50,18 @@ class PostContentView: UIView {
         thumbnailImageView.clipsToBounds = true
         thumbnailImageView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
         titleLabel.numberOfLines = 0
+        titleLabel.lineBreakMode = .byTruncatingMiddle
         backgroundColor = .white
         layer.cornerRadius = 6
     }
     
     func configure(with postEntity: PostEntity) {
+        let height = postEntity.thumbnailHeight ?? 0
+        thumbnailImageView.image = nil
         titleLabel.configure(text: postEntity.title)
         userBarView.configure(with: postEntity)
         thumbnailImageView.setImage(atPath: postEntity.thumbnail, contentMode: .scaleAspectFill)
         thumbnailImageView.isHidden = (postEntity.thumbnail ?? "") == UIImage.defaultImage
+        stackView.size(height: height, priority: 999)
     }
 }
-
-extension Int {
-    var string: String {
-        String(self)
-    }
-}
-

@@ -17,16 +17,15 @@ extension UIImageView {
         set {
             UIView.transition(
                 with: self,
-                duration: 0.5, options: .transitionCrossDissolve, animations: {
+                duration: 0.25, options: .transitionCrossDissolve, animations: {
                     self.image = newValue
             },completion: nil )
         }
     }
     
-    func setImage(atPath path: String?, contentMode: UIView.ContentMode){
-        image = nil
+    func setImage(atPath path: String?, contentMode: UIView.ContentMode) {
+         self.contentMode = contentMode
         ImageBuilder(imagePath: path).configure { [weak self] (image) in
-            self?.contentMode = contentMode
             self?.imageWithFade = image
         }
     }

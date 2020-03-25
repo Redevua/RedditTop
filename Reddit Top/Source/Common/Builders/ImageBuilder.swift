@@ -14,7 +14,7 @@ struct ImageBuilder {
     
     func configure(onNext: @escaping (UIImage?) -> Void) {
         let imagePath = self.imagePath
-        DispatchQueue.global(qos: .userInitiated).async { 
+        DispatchQueue.global(qos: .userInteractive).async { 
             guard let path = imagePath,
                 let url = URL(string: path),
                 let data = try? Data(contentsOf: url),
